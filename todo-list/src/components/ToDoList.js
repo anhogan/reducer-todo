@@ -10,7 +10,7 @@ function ToDoList(props) {
       {props.initialState.map(todo => (
         <ToDoItems 
           key={todo.id}
-          todo={state}
+          todo={todo}
           toggleComplete={() => dispatch({ type: 'TOGGLE-COMPLETE' })} />
       ))}
       <form>

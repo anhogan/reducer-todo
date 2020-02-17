@@ -8,7 +8,8 @@ function App() {
   const newToDo = "";
 
   const handleChange = (event) => {
-    console.log(event);
+    const newToDo = event.target.value;
+    return newToDo;
   };
 
   return (
