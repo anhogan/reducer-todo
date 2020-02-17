@@ -26,8 +26,9 @@ function App() {
   return (
     <div className="App">
       <ToDoList 
-        todoList={state}
+        todoList={state.list}
         newTodo={newTodo}
+        setNewTodo={setNewTodo}
         handleChange={handleChange}
         addTodo={addTodo}
         clearCompleted={clearCompleted}

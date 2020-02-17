@@ -1,6 +1,12 @@
 import React from 'react';
 
 const ToDoForm = (props) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.addTodo(props.newTodo);
+    props.setNewTodo('');
+  }
+
   return (
     <form>
       <input
@@ -10,7 +16,7 @@ const ToDoForm = (props) => {
         placeholder="To-Do"
         value={props.newTodo} />
         <div className="buttons">
-          <button onClick={props.addTodo}>Add To-Do</button>
+          <button onClick={handleSubmit}>Add To-Do</button>
           <button onClick={props.clearCompleted}>Clear Completed</button>
         </div>
     </form>

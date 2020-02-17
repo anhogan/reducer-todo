@@ -15,7 +15,8 @@ function ToDoList(props) {
         newTodo={props.newTodo}
         handleChange={props.handleChange}
         addTodo={props.addTodo}
-        clearCompleted={props.clearCompleted} />
+        clearCompleted={props.clearCompleted}
+        setNewTodo={props.setNewTodo} />
     </div>
   );
 };
