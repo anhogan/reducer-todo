@@ -11,7 +11,7 @@ function ToDoList(props) {
         <ToDoItems 
           key={todo.id}
           todo={state}
-          toggleComplete={props.toggleComplete} />
+          toggleComplete={() => dispatch({ type: 'TOGGLE-COMPLETE' })} />
       ))}
       <form>
         <input
