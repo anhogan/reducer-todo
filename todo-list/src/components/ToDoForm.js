@@ -7,6 +7,11 @@ const ToDoForm = (props) => {
     props.setNewTodo('');
   }
 
+  const clearCompleted = (event) => {
+    event.preventDefault();
+    props.clearCompleted();
+  }
+
   return (
     <form>
       <input
@@ -17,7 +22,7 @@ const ToDoForm = (props) => {
         value={props.newTodo} />
         <div className="buttons">
           <button onClick={handleSubmit}>Add To-Do</button>
-          <button onClick={props.clearCompleted}>Clear Completed</button>
+          <button onClick={clearCompleted}>Clear Completed</button>
         </div>
     </form>
   );
