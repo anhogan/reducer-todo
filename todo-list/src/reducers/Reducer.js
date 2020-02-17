@@ -15,12 +15,24 @@ export function reducer(state, action) {
     case 'TOGGLE-COMPLETED':
       return {
         ...state,
-        completed: !state.list.completed
+        list: state.list.map((task) => {
+            return task.id === action.payload ? { ...task, completed: !task.completed } : task;
+          })
       }
+      // return {
+      //   ...state,
+      //   completed: !state.list.completed
+      // }
     case 'CLEAR-COMPLETED':
-      return state.list.filter((task) => {
-        return !task.completed;
-      })
+      return {
+        ...state,
+        list: state.list.filter((task) => {
+            return !task.completed;
+          })
+      }
+      // return state.list.filter((task) => {
+      //   return !task.completed;
+      // })
     default:
       return state
   };
