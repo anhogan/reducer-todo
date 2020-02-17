@@ -1,13 +1,17 @@
 export function reducer(state, action) {
   switch(action.type) {
     case 'ADD-TODO':
-      return [...state, {
-        task: state.task,
+      return {
+        ...state,
+        task: action.payload,
         completed: false,
         id: Date.now()
-      }]
+      }
     case 'TOGGLE-COMPLETED':
-      return { completed: !state.completed }
+      return {
+        ...state,
+        completed: !state.completed
+      }
     case 'CLEAR-COMPLETED':
       const newState = state.filter(task => {
         return !task.completed
