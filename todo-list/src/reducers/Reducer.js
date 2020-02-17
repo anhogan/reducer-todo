@@ -4,7 +4,7 @@ export function reducer(state, action) {
       return [
         ...state,
         {
-          task: action.task,
+          task: action.payload,
           completed: false,
           id: Date.now()
         }

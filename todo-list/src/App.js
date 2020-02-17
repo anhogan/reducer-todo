@@ -5,7 +5,6 @@ import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialList);
-  const initialState = initialList;
   const [newTodo, setNewTodo] = useState('');
 
   const handleChange = (event) => {
@@ -27,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <ToDoList 
-        initialState={initialState}
+        todoList={state}
         newTodo={newTodo}
         handleChange={handleChange}
         addTodo={addTodo}

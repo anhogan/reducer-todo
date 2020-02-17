@@ -5,7 +5,7 @@ import ToDoForm from './ToDoForm';
 function ToDoList(props) {
   return (
     <div>
-      {props.initialState.map(todo => (
+      {props.todoList.map(todo => (
         <ToDoItems 
           key={todo.id}
           todo={todo}
