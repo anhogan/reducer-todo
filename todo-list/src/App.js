@@ -27,7 +27,8 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="container">
+      <h2>To-Do List</h2>
       <ToDoList 
         todoList={state.list}
         newTodo={newTodo}

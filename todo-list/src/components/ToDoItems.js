@@ -4,7 +4,7 @@ const ToDoItems = props => {
   return (
     <div 
       onClick={() => props.toggleComplete(props.todo.id)} 
-      className={`task ${props.todo.completed}`}>
+      className={`task${props.todo.completed}`}>
       <span>{props.todo.task}</span>
       <hr />
     </div>

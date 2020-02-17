@@ -3,6 +3,7 @@ import cuid from 'cuid';
 export function reducer(state, action) {
   switch(action.type) {
     case 'ADD-TODO':
+      console.log(action.payload)
       return {
         ...state,
         list: [
