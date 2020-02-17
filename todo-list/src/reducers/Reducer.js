@@ -1,5 +1,3 @@
-import cuid from 'cuid';
-
 export function reducer(state, action) {
   switch(action.type) {
     case 'ADD-TODO':
@@ -11,7 +9,7 @@ export function reducer(state, action) {
           {
             task: action.payload,
             completed: false,
-            id: cuid()
+            id: Date.now()
           }
         ],
       }
