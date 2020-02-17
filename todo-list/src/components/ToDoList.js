@@ -5,6 +5,7 @@ import ToDoItems from './ToDoItems';
 function ToDoList(props) {
   const [state, dispatch] = useReducer(reducer, props.initialState);
   const [newTodo, setNewTodo] = useState('');
+  const [todo, setTodo] = useState(state.task)
 
   const handleChange = (event) => {
     setNewTodo(event.target.value);
@@ -26,7 +27,7 @@ function ToDoList(props) {
           placeholder="To-Do"
           value={newTodo} />
           <div className="buttons">
-            <button onClick={() => dispatch({ type: 'ADD-TODO' })}>Add To-Do</button>
+            <button onClick={() => dispatch({ type: 'ADD-TODO', payload: todo })}>Add To-Do</button>
             <button onClick={() => dispatch({ type: 'CLEAR-COMPLETED' })}>Clear Completed</button>
           </div>
       </form>
