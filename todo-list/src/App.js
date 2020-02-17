@@ -5,19 +5,11 @@ import './App.css';
 
 function App() {
   const initialState = initialList;
-  const newToDo = "";
-
-  const handleChange = (event) => {
-    const newToDo = event.target.value;
-    return newToDo;
-  };
 
   return (
     <div className="App">
       <ToDoList 
-        initialState={initialState}
-        newToDo={newToDo}
-        handleChange={handleChange} />
+        initialState={initialState} />
     </div>
   );
 }

@@ -1,9 +1,14 @@
-import React, { useReducer } from 'react';
+import React, { useState, useReducer } from 'react';
 import { reducer } from '../reducers/Reducer';
 import ToDoItems from './ToDoItems';
 
 function ToDoList(props) {
   const [state, dispatch] = useReducer(reducer, props.initialState);
+  const [newTodo, setNewTodo] = useState('');
+
+  const handleChange = (event) => {
+    setNewTodo(event.target.value);
+  };
 
   return (
     <div>
@@ -15,11 +20,11 @@ function ToDoList(props) {
       ))}
       <form>
         <input
-          onChange={props.handleChange}
+          onChange={handleChange}
           type="text"
           name="todo-item"
           placeholder="To-Do"
-          value={props.newTodo} />
+          value={newTodo} />
           <div className="buttons">
             <button onClick={() => dispatch({ type: 'ADD-TODO' })}>Add To-Do</button>
             <button onClick={() => dispatch({ type: 'CLEAR-COMPLETED' })}>Clear Completed</button>
