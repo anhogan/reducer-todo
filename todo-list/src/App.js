@@ -11,9 +11,9 @@ function App() {
     setNewTodo(event.target.value);
   };
 
-  const addTodo = (event, task) => {
+  const addTodo = (event) => {
     event.preventDefault();
-    dispatch({ type: 'ADD-TODO', payload: task });
+    dispatch({ type: 'ADD-TODO', payload: newTodo });
     setNewTodo('');
   };
 
