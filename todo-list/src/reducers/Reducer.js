@@ -1,3 +1,5 @@
+import cuid from 'cuid';
+
 export function reducer(state, action) {
   switch(action.type) {
     case 'ADD-TODO':
@@ -8,9 +10,9 @@ export function reducer(state, action) {
           {
             task: action.payload,
             completed: false,
-            id: Date.now()
+            id: cuid()
           }
-        ]
+        ],
       }
     case 'TOGGLE-COMPLETED':
       return {
@@ -19,10 +21,6 @@ export function reducer(state, action) {
             return task.id === action.payload ? { ...task, completed: !task.completed } : task;
           })
       }
-      // return {
-      //   ...state,
-      //   completed: !state.list.completed
-      // }
     case 'CLEAR-COMPLETED':
       return {
         ...state,
@@ -30,9 +28,6 @@ export function reducer(state, action) {
             return !task.completed;
           })
       }
-      // return state.list.filter((task) => {
-      //   return !task.completed;
-      // })
     default:
       return state
   };

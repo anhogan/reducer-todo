@@ -11,16 +11,19 @@ function App() {
     setNewTodo(event.target.value);
   };
 
-  const addTodo = (task) => {
-    dispatch({ type: 'ADD-TODO', payload: task })
+  const addTodo = (event, task) => {
+    event.preventDefault();
+    dispatch({ type: 'ADD-TODO', payload: task });
+    setNewTodo('');
   };
 
   const toggleComplete = (id) => {
-    dispatch({ type: 'TOGGLE-COMPLETED', payload: id })
+    dispatch({ type: 'TOGGLE-COMPLETED', payload: id });
   };
 
-  const clearCompleted = () => {
-    dispatch({ type: 'CLEAR-COMPLETED' })
+  const clearCompleted = (event) => {
+    event.preventDefault();
+    dispatch({ type: 'CLEAR-COMPLETED' });
   };
 
   return (
@@ -28,7 +31,6 @@ function App() {
       <ToDoList 
         todoList={state.list}
         newTodo={newTodo}
-        setNewTodo={setNewTodo}
         handleChange={handleChange}
         addTodo={addTodo}
         clearCompleted={clearCompleted}
