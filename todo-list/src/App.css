@@ -117,10 +117,10 @@ h2 {
 .buttons button {
   width: 45%;
   margin: 2.5%;
-  font-size: .8rem;
+  font-size: 1rem;
   background: coral;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .buttons button:hover {
